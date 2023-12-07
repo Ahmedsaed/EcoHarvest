@@ -42,25 +42,25 @@ API Documentation:
 
 1. Health Prediction Route
 
-### Route:
+##### Route:
 `POST /api/models/health`
 
-### Description:
+##### Description:
 This route receives an image file and utilizes a pre-trained TensorFlow model to predict whether the image represents a healthy or unhealthy object based on the provided image data.
 
-### Request Parameters:
+##### Request Parameters:
 - Method: `POST`
 - Headers:
   - `Content-Type: multipart/form-data`
 - Form Data:
   - `image`: File (Image file to be predicted)
 
-### Response:
+##### Response:
 - Content Type: `application/json`
 - Body:
   - `prediction`: Boolean (True if the model predicts the object as healthy, False otherwise)
 
-### Example Usage:
+##### Example Usage:
 
 **Request:**
 ```http
@@ -83,20 +83,20 @@ curl -X POST -H "Content-Type: multipart/form-data" -F "image=@./jitropha/leaf/d
 
 2. Ripe Prediction Route
 
-### Route:
+##### Route:
 `POST /api/models/ripe`
 
-### Description:
+##### Description:
 This route accepts an image file and performs prediction using a pre-trained TensorFlow model. The model predicts whether the image represents a ripe object based on the given image data.
 
-### Request Parameters:
+##### Request Parameters:
 - Method: `POST`
 - Headers:
   - `Content-Type: multipart/form-data`
 - Form Data:
   - `image`: File (Image file to be predicted)
 
-### Response:
+##### Response:
 - Content Type: `application/json`
 - Body:
   - `prediction`: Boolean (True if the model predicts the object as ripe, False otherwise)
