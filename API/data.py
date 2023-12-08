@@ -11,27 +11,27 @@ data = pd.read_csv('./dummy_data.csv')
 @app.route('/api/data/temperature', methods=['GET'])
 @app.route('/api/data/temperature/<int:n>', methods=['GET'])
 def get_temperature(n=5):
-    return jsonify(data['temperature'].tail(n).to_dict())
+    return jsonify(data['temperature'].head(n).to_dict())
 
 @app.route('/api/data/light_intensity', methods=['GET'])
 @app.route('/api/data/light_intensity/<int:n>', methods=['GET'])
 def get_light_intensity(n=5):
-    return jsonify(data['light_intensity'].tail(n).to_dict())
+    return jsonify(data['light_intensity'].head(n).to_dict())
 
 @app.route('/api/data/co2_level', methods=['GET'])
 @app.route('/api/data/co2_level/<int:n>', methods=['GET'])
 def get_co2_level(n=5):
-    return jsonify(data['co2_level'].tail(n).to_dict())
+    return jsonify(data['co2_level'].head(n).to_dict())
 
 @app.route('/api/data/water_ph_value', methods=['GET'])
 @app.route('/api/data/water_ph_value/<int:n>', methods=['GET'])
 def get_water_ph_value(n=5):
-    return jsonify(data['water_ph_value'].tail(n).to_dict())
+    return jsonify(data['water_ph_value'].head(n).to_dict())
 
 @app.route('/api/data/time', methods=['GET'])
 @app.route('/api/data/time/<int:n>', methods=['GET'])
-def get_time(n=5):
-    return jsonify(data['time'].tail(n).to_dict())
+def get_time(n=1):
+    return jsonify(data['time'].head(n).to_dict())
 
 @app.route('/api/data/update', methods=['PUT'])
 def update_data():
