@@ -8,6 +8,70 @@ Furthermore, as an integral part of our solution, we plan to establish a dedicat
 
 By combining artificial intelligence in the cultivation process and investing in a cutting-edge oil extraction facility, we aim to not only enhance the overall efficiency of our solution but also contribute to a sustainable future by accelerating the production of biofuel from Jatropha oil. This strategic approach aligns with our commitment to minimizing environmental impact and advancing renewable energy practices.
 
+## Data Collection
+
+The data collection process is a crucial aspect of our solution. For the computer vision models, we gathered the data from public datasets and online sources. The data includes images of Jatropha leaves and seeds, which will be used to train the models for health and ripeness prediction.
+
+The data can be found in the `data` directory, which should be extracted to the `jitropha` directory. The `jitropha` directory contains the following subdirectories:
+- `leaf`: Contains images of Jatropha leaves, categorized into `diseased` and `healthy` subdirectories.
+- `seed`: Contains images of Jatropha seeds, categorized into `ripe` and `unripe` subdirectories.
+
+## Model Training
+
+The model training process involves training three computer vision models:
+- The first model is a health prediction model that predicts whether a Jatropha leaf is healthy or diseased.
+- The second model is a ripeness prediction model that predicts whether a Jatropha seed is ripe or unripe.
+- The third model is a reinforcement learning (RL) model that provides recommendations based on environmental data.
+
+The first 2 models are trained using TensorFlow and Keras, and the training process is detailed in the following Jupyter notebooks:
+- `jitropha-health.ipynb`: This notebook contains the code for training the health prediction model using images of Jatropha leaves.
+- `jitropha-ripeness.ipynb`: This notebook contains the code for training the ripeness prediction model using images of Jatropha seeds.
+
+The RL model is trained using the Stable Baselines library, and the training process is detailed in the following Jupyter notebook:
+- `jitropha-recommendation-system.ipynb`: This notebook contains the code for training the RL model to provide recommendations based on environmental data.
+
+The trained models are saved in the `Training/{model_name}` directory:
+
+## Mobile Application
+
+The mobile application is designed to provide a user-friendly interface for monitoring and managing the Jatropha cultivation process. The application allows users to view real-time environmental data, receive health and ripeness predictions, and access recommendations from the RL model.
+
+The mobile application is built using the Flutter framework, and the source code can be found in the `mobile_application` directory.
+
+![IMPORTANT]
+The mobile application is a submodule of the main repository. To clone the repository with the submodule, use the following command:
+```bash
+git clone --recurse-submodules <repository_url>
+```
+
+The application is designed to run on both Android and iOS devices. To run the application, follow the instructions in the `mobile_application/README.md` file.
+
+## API Server
+
+The API server is designed to provide endpoints for data fetching and model inference. The server is built using the Flask framework and provides routes for retrieving environmental data and making predictions using the trained models.
+
+The API is hosted on Firebase/Google Cloud Platform and can be hosted on a local server as well. The source code for the API server can be found in the `API` directory.
+
+To run the API server, run `run.py` using python3.8. The server will start on `http://localhost:5000` by default.
+
+## How To Use
+
+1. You need to have git lfs installed to clone this repository. If you don't have Git LFS (Large File Storage) installed, you can install it from [here](https://git-lfs.github.com/).
+1. Clone the repository using the following command:
+   ```bash
+   git clone --recurse-submodules <repository_url>
+   ```
+    Replace `<repository_url>` with the URL of the repository.
+1. Install the required dependencies using the following command:
+   ```bash
+   pip install -r requirements.txt
+   ```
+1. Run the API server using the following command:
+    ```bash
+    python run.py
+    ```
+1. Follow the instructions in the `mobile_application/README.md` file to run the mobile application.
+
 ## API Documentation
 
 ### Data Fetching

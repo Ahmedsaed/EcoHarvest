@@ -1,0 +1,3 @@
+[submodule "mobile_application"]
+	path = mobile_application
+	url = https://github.com/Ahmed336-cell/jitropha_system.git
